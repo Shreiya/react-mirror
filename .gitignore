@@ -1,0 +1,8 @@
+localhost.csr
+localhost-key.pem
+localhost-cert.pem
+/node_modules
+/static
+/tmp
+/logs
+/.react-tmp
