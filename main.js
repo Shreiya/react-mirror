@@ -32,7 +32,9 @@ app.on('ready', function() {
     cwd: __dirname
   });
 
-  var browserWindowOptions = {width: 1300, height: 1200, icon: 'favicon.ico' , kiosk:true, autoHideMenuBar:true, darkTheme:true, fullScreen: true, enableLargerThanScreen: true};
+
+  var browserWindowOptions = {width: 800, height: 600, icon: 'favicon.ico' , kiosk:true, autoHideMenuBar:true, darkTheme:true};
+
   // Create the browser window.
   mainWindow = new BrowserWindow(browserWindowOptions);
 
@@ -51,4 +53,5 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
 });
