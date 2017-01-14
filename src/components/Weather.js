@@ -30,7 +30,7 @@ var Weather = React.createClass({
         });
       }
     });
-  },  
+  },
   geolocationSearch: function () {
     var success = function (position) {
       var lat = position.coords.latitude;
@@ -45,7 +45,7 @@ var Weather = React.createClass({
     }.bind(this);
     navigator.geolocation.getCurrentPosition(success, error);
   },
-  componentDidMount: function () { 
+  componentDidMount: function () {
     this.geolocationSearch();
     setInterval(this.loadFeedFromServer, this.props.pollInterval);
   },
@@ -60,7 +60,7 @@ var Weather = React.createClass({
     } else {
       return <div/>
     }
-  }  
+  }
 });
 
 var WeatherContainer = React.createClass({
@@ -74,7 +74,7 @@ var WeatherContainer = React.createClass({
   getIcon: function () {
     return 'wi wi-owm-' + this.state.todayWeather.weather[0].id + ' centericon k-widget';
   },
-  render: function() {  
+  render: function() {
      return (
       <div className="maincage themecolor">
         <div className="bgimagecage">
@@ -116,7 +116,7 @@ var TodayWeather = React.createClass({
   },
   componentDidMount: function () {
     //should load a gif dynamically depending on weather condition (e.g. rain, sunny, windy, etc)
-    $('body').append('<style>div.maincage::after{background: url(images/giphyfff.gif);');
+    $('body');
   },
   render: function () {
     return (

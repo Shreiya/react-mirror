@@ -19,6 +19,10 @@ body {
   font-size: 80px;
 }
 
+.seconds {
+  visibility: hidden;
+}
+
 .weather {
   margin-left: auto;
   display: inline-block;
@@ -27,7 +31,7 @@ body {
 
 .temperature-info {
   padding: 0 5px 0 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid black;
 }
 
 .temperature-info .info {
@@ -65,13 +69,13 @@ span.newsticker img {
 }
 
 .modal-content {
-  background: #4C4C4C;
+  background: black;
 }
 
 .modal-body img {
   max-width: 100%!important;
   height: auto!important;
-  background-color: #f2f2f2;
+  background-color: black;
   text-align: center;
   padding: 10px;
   margin-bottom: .8em;
@@ -109,7 +113,7 @@ span.newsticker img {
 }
 
 div.themecolor{
-  background: #598AD6;
+  background: black;
 }
 
 div.maincage{
@@ -130,14 +134,14 @@ div.maincage::after {
   right: 0;
   position: absolute;
   z-index: -1;
-  opacity: 0.54; 
+  opacity: 0.54;
   background-size: 133%;
   background-position-x: -87px;
 }
 div.bgimagecage{
   height:349px;
   z-index: -1;
-  text-align: center;  
+  text-align: center;
 }
 div.commonwidth, div.commonwidth::after {
   width: 533px;
@@ -244,4 +248,4 @@ width:100%;
 height:155px;
 float:left;
 background: rgba(0, 0, 0, 0.15);
-} 
+}
