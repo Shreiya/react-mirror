@@ -38,6 +38,7 @@
     "moment": "*",
     "react": "^0.14.0",
     "react-bootstrap": "^0.27.3",
+    "react-clockwall": "^1.4.7",
     "react-css-transition-replace": "^1.0.0",
     "react-dom": "^0.14.0",
     "react-intl": "1.2.0",

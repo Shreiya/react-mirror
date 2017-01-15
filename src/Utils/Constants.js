@@ -1,18 +1,18 @@
 var Constants = {
   Calendar: {
     Formats: {
-      Time: 'h:mm:ss a',
+      Time: 'h:mm a',
       Date: 'ddd, MMMM D YYYY'
     }
   },
   Weather: {
-    ApiKey: '1ee24161cdbde3ee4e90303b6635b317',
+    ApiKey: '99f4af1f8d31e96dda4a72bfec4d1cd0',
     RefreshInterval: 1000 * 60 * 60,
-    DefaultCoordinates: [1.3, 103.8],
-    DefaultCity: 'Singapore'
-  },  
+    DefaultCoordinates: [28.542985, 77.204866],
+    DefaultCity: 'New Delhi'
+  },
   Feed : {
-    Url: 'http://finance.yahoo.com/rss/topfinstories',
+    Url: 'https://news.google.com/news?cf=all&hl=en&pz=1&ned=in&topic=tc&output=rss',
     //Url: '//hr-pulsesubscriber.appspot.com/items?feed=curated://top_read_News',
     //Url: 'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', <-- this rss sucks..
     RefreshInterval : 1000 * 60 * 5,

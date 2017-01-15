@@ -6,7 +6,7 @@ var Jarvis = require('../Utils/Jarvis');
 var voices = [];
 var watch = setInterval(function() {
    voices = speechSynthesis.getVoices();
-   if (voices.length !== 0) {     
+   if (voices.length !== 0) {
       clearInterval(watch);
    }
 }, 1);
@@ -20,7 +20,7 @@ var Say = function (text){
     var utterance = new SpeechSynthesisUtterance();
     utterance.text = text;
     utterance.voice = voices.filter(function(voice)  {
-      return voice.name == 'Daniel'; 
+      return voice.name == 'Lee'; 
     })[0];
     annyang.pause();
     speechUtteranceChunker(utterance, {

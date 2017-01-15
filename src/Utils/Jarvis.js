@@ -4,7 +4,7 @@ var $                 = require('jquery'),
 
 var Jarvis = (function (){
   var instance = {};
-  
+
   instance.introduction = function(name) {
     console.log('Hi Gary');
     Say('Hi ' + name + ', nice to meet you');
@@ -28,7 +28,7 @@ var Jarvis = (function (){
 
   instance.init = function () {
     _init();
-    Say('Greetings, how may i address you?');
+    Say('Hi');
   };
 
   instance.pause = function () {
@@ -43,7 +43,7 @@ var Jarvis = (function (){
     speechSynthesis.cancel();
   }
 
-  
+
   return instance;
 })();
 

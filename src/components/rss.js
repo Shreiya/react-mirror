@@ -1,6 +1,6 @@
 'use strict';
 
-var React                     = require('react'),    
+var React                     = require('react'),
     $                         = require('jquery'),
     moment                    = require('moment'),
     ReactBS                   = require('react-bootstrap'),
@@ -21,9 +21,10 @@ var Feed = React.createClass({
   },
   mixins: [SetIntervalMixin],
   getInitialState: function () {
-    return { 
-      feed: { 
-        entries: [] 
+    return {
+      feed: {
+        entries: [],
+        content: ""
       },
       currentFeed: 0,
       showDialog: false
@@ -33,7 +34,7 @@ var Feed = React.createClass({
     this.loadFeedFromServer();
     setInterval(this.loadFeedFromServer, this.props.pollInterval);
     this.startRotateFeed();
-    Jarvis.addCommands('wait', this.showModal);
+    Jarvis.addCommands('show', this.showModal);
     Jarvis.addCommands('read for me', this.readCurrentArticle);
   },
   updateState: function (obj) {
@@ -44,9 +45,9 @@ var Feed = React.createClass({
   startRotateFeed: function () {
     this.feedInterval = setInterval(this.displayNextFeed, Constants.Feed.AppearDuration);
   },
-  pauseRotateFeed: function () {    
+  pauseRotateFeed: function () {
     clearInterval(this.feedInterval);
-  },  
+  },
   getCurrentFeed: function () {
     return this.state.feed.entries[this.state.currentFeed];
   },
@@ -57,7 +58,7 @@ var Feed = React.createClass({
       currentFeed++;
     } else {
       currentFeed = 0
-    }   
+    }
     this.updateState({currentFeed: currentFeed});
   },
   loadFeedFromServer: function () {
@@ -73,7 +74,7 @@ var Feed = React.createClass({
     this.updateState({ show: true });
     this.pauseRotateFeed();
   },
-  hideModal: function () {    
+  hideModal: function () {
     this.updateState({ show: false });
     this.startRotateFeed();
   },
@@ -117,9 +118,9 @@ var Feed = React.createClass({
               <div className="article" dangerouslySetInnerHTML={this.rawHtml()} />
             </Modal.Body>
           </Modal>
-          <ReactCSSTransitionReplace transitionName="fade-wait" 
+          <ReactCSSTransitionReplace transitionName="fade-wait"
                                      overflowHidden={false}
-                                     transitionEnterTimeout={Constants.Feed.FadeTransitionInterval.Enter} 
+                                     transitionEnterTimeout={Constants.Feed.FadeTransitionInterval.Enter}
                                      transitionLeaveTimeout={Constants.Feed.FadeTransitionInterval.Leave}>
             <FeedItem key={this.state.currentFeed} entry={entry} />
           </ReactCSSTransitionReplace>
